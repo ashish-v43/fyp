@@ -1,0 +1,6 @@
+API integrations must include:
+
+- Unit Tests
+- Error Handling
+- Logging
+- Documentation
