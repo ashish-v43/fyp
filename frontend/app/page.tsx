@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import api from "./services/api";
+import { uploadDocument } from "./services/api";
 
 export default function Home() {
 
@@ -20,32 +20,12 @@ export default function Home() {
 
     setLoading(true);
 
-    const formData = new FormData();
-
-    formData.append(
-      "file",
-      file
-    );
-
     try {
-
-      const response =
-        await api.post(
-          "/upload",
-          formData,
-          {
-            headers: {
-              "Content-Type":
-                "multipart/form-data",
-            },
-          }
-        );
+      const response = await uploadDocument(file);
 
       localStorage.setItem(
         "analysis",
-        JSON.stringify(
-          response.data
-        )
+        JSON.stringify({ result: null, document: response })
       );
 
       router.push(
@@ -224,9 +204,9 @@ export default function Home() {
           {
             loading
 
-              ? "Analyzing..."
+              ? "Indexing..."
 
-              : "Upload & Analyze"
+              : "Upload & Index"
           }
 
         </button>
@@ -243,12 +223,7 @@ export default function Home() {
       "
     >
 
-      🤖 Multi-Agent AI is analyzing the transcript...
-
-      <br />
-
-      ⏳ Estimated processing time:
-      3–7 minutes
+      Indexing this document for AI question answering...
 
     </div>
 

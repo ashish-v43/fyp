@@ -1,0 +1,63 @@
+# Python runtime, bytecode, and test/tool caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.eggs/
+*.egg
+*.egg-info/
+pip-wheel-metadata/
+htmlcov/
+.coverage
+.coverage.*
+
+# Next.js, Node.js, and package-manager output
+node_modules/
+.next/
+out/
+build/
+.turbo/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Local environment files; keep safe example templates versioned
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Private keys, certificates, credentials, and secret stores
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.secret
+credentials.json
+service-account*.json
+.secrets/
+secrets/
+
+# Local uploads and generated reports
+uploads/
+
+# Operating system and editor metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

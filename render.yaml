@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: arkspace-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama3-8b-8192
+      - key: VERCEL_ORIGIN
+        sync: false

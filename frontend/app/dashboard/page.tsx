@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import api from "../services/api";
 
 type Task = {
   task?: string;
@@ -67,7 +68,7 @@ export default function Dashboard() {
     setIsDownloading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/generate-report", {
+      const response = await fetch(`${api.defaults.baseURL}/generate-report`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(result),
